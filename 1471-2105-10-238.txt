@@ -1,0 +1,168 @@
+This complex expression can also be obtained using our KAPattern package.	We present here a simple stand-alone computer program written in MATLAB GUI called KAPattern for generating rate equations in complex enzyme systems.	4
+This complex expression can also be obtained using our KAPattern package.	Our stand-alone KAPattern package is developed using MATLAB GUI.	1
+This complex expression can also be obtained using our KAPattern package.	We have described a systematic method and the corresponding computer program called KAPattern for generating rate equations for any complex enzyme systems.	3
+This complex expression can also be obtained using our KAPattern package.	Background	0
+This complex expression can also be obtained using our KAPattern package.	Since Haldane's analysis of a simple enzyme mechanism  kinetic analysis has been central to our quantitative understanding of enzyme mechanisms .	0
+This complex expression can also be obtained using our KAPattern package.	In conventional applications kinetic data from initial-rate experiments are used to evaluate enzyme mechanisms based upon derived mechanistic rate expressions.	0
+This complex expression can also be obtained using our KAPattern package.	Such rate expressions are important in building integrated models of metabolic systems which involve a number of enzymatic reactions .	0
+This complex expression can also be obtained using our KAPattern package.	In principle the rate equations for a given discrete-state reaction mechanism can be derived by solving a system of simultaneous nonlinear algebraic equations that result from the steady-state expressions for the concentrations of all of the enzyme intermediates.	0
+This complex expression can also be obtained using our KAPattern package.	This approach was first applied successfully by Botts and Morales  to some enzymatic systems.	0
+This complex expression can also be obtained using our KAPattern package.	However when the system involves multiple substrates enzyme complexes and products  deriving rate equations based on steady-state equations may be too complex to be of practical interest and also can be liable to human errors.	0
+This complex expression can also be obtained using our KAPattern package.	Therefore systematic approaches as reviewed by Huang  are desirable.	0
+This complex expression can also be obtained using our KAPattern package.	King and Altman  introduced a graphical/schematic method for facilitating derivation of steady-state rate equations in enzymatic systems.	0
+This complex expression can also be obtained using our KAPattern package.	Modifications introduced by Volkenstein and Goldsein  and Cha  added substantial power to the King-Altman method by applying graph theory and allowing for the assumption that one or more of the reversible steps in the enzyme mechanism is maintained in rapid equilibrium .	0
+This complex expression can also be obtained using our KAPattern package.	Other alternative methods include those described by Fromm  Orsi  Ainsworth  Indge and Childs  and Chou and Forsen .	0
+This complex expression can also be obtained using our KAPattern package.	Even when using graphical methods manually deriving the steady-state rate equations for non-trivial enzyme mechanisms can be cumbersome and error-prone.	0
+This complex expression can also be obtained using our KAPattern package.	Therefore computer-assisted methods are useful.	0
+This complex expression can also be obtained using our KAPattern package.	Applying the method of King-Altman Pring  and Rhoads  developed two programmes K and D which perform logical operations essential for generating rate equations based on the strictly steady-state assumption with respect to a certain class of species present.	0
+This complex expression can also be obtained using our KAPattern package.	Lam and Priest  introduced an algorithm based on graph theory that is computer programmable.	0
+This complex expression can also be obtained using our KAPattern package.	Cornish-Bowden  presented a computer implementation of Cha's method using an exhaustive search.	0
+This complex expression can also be obtained using our KAPattern package.	A computer program developed by Kinderlerer and Ainsworth  is restricted to enzyme mechanisms involving up to 10 enzyme intermediates.	0
+This complex expression can also be obtained using our KAPattern package.	Straathof and Heijnen  and Fromm and Fromm  introduced methods to derive rate equations for enzyme systems using the symbolic algebra packages Maple and Mathematica.	0
+This complex expression can also be obtained using our KAPattern package.	However these programs derive only strictly steady-state rate equations and cannot obtain rate equations involving irreversible steps.	0
+This complex expression can also be obtained using our KAPattern package.	Varon et al.  developed a program called Albass that overcame many of the limitations of earlier programs.	0
+This complex expression can also be obtained using our KAPattern package.	Several years later the Varon group developed two new programs written in C++ called Referass  and WinStes  which can derive rate equations for mechanisms with up to 255 intermediate states with up to 255 reactions.	0
+This complex expression can also be obtained using our KAPattern package.	The algorithms and software developed by Varon and colleagues represent the most powerful and flexible previously developed tools for deriving enzyme rate expressions.	0
+This complex expression can also be obtained using our KAPattern package.	Yet like other previous packages it does not appear to be currently available.	0
+This complex expression can also be obtained using our KAPattern package.	This program is based on the schematic method of King and Altman  and uses the topological theory of linear graphs called Wang Algebra  that systematically generates valid King-Altman directed graph patterns.	0
+This complex expression can also be obtained using our KAPattern package.	Our package provides the functionality of the WinStes program of Varon and colleagues (in that it can handle strictly steady-state as well as quasi-equilibrium steps can be applied to branched as well as unbranched systems and does not rely on an exhaustive search for determining directed graphs) with several additional features:	0
+This complex expression can also be obtained using our KAPattern package.	1.	0
+This complex expression can also be obtained using our KAPattern package.	There is no limitation on the size of the system other than that imposed by the available memory and CPU resources.	0
+This complex expression can also be obtained using our KAPattern package.	2.	0
+This complex expression can also be obtained using our KAPattern package.	The program can output the results (the generated rate equations) as a MathML file or a MATLAB .m file which may be integrated into simulation program.	0
+This complex expression can also be obtained using our KAPattern package.	(For instance it can be used in conjunction with a simulation package such as BISEN .)	0
+This complex expression can also be obtained using our KAPattern package.	3.	0
+This complex expression can also be obtained using our KAPattern package.	The program provides visualization of all the valid KA patterns.	0
+This complex expression can also be obtained using our KAPattern package.	4.	0
+This complex expression can also be obtained using our KAPattern package.	Functions available in KAPattern may help the end-users to obtain insights on catalytic mechanism (e.g. structural properties topological features stoichiometric matrix etc.) that may be useful for other applications.	0
+This complex expression can also be obtained using our KAPattern package.	5.	0
+This complex expression can also be obtained using our KAPattern package.	Foremost the package is freely available for download and use by the community.	0
+This complex expression can also be obtained using our KAPattern package.	Results and Discussion	0
+This complex expression can also be obtained using our KAPattern package.	The King-Altman method	0
+This complex expression can also be obtained using our KAPattern package.	The King-Altman (KA) procedure is easily understood based on an illustrative example as described here for the enzyme mechanism illustrated in Figure 1.	0
+This complex expression can also be obtained using our KAPattern package.	This mechanism is the proposed five-state catalytic scheme for fumarase (or fumarate hydratase) which catalyzes the hydration of fumarate to malate .	0
+This complex expression can also be obtained using our KAPattern package.	This mechanism involves 5 enzyme states (n = 5) and 6 links between those states characterized by 12 rate constants.	0
+This complex expression can also be obtained using our KAPattern package.	.	0
+This complex expression can also be obtained using our KAPattern package.	The first step in applying the KA procedure is listing all of the valid KA patterns for the enzyme mechanism.	0
+This complex expression can also be obtained using our KAPattern package.	These patterns illustrated in Figure 2A are the set of all subsets of the graph in Figure 1 with the maximum number of edges while excluding any closed loops.	0
+This complex expression can also be obtained using our KAPattern package.	There there are 12 possible KA patterns associated with the mechanism of Figure 1.	0
+This complex expression can also be obtained using our KAPattern package.	The next step is to determine all of the directional diagrams associated with each state in the enzyme mechanism.	0
+This complex expression can also be obtained using our KAPattern package.	The directional diagrams associated with a given state are constructed from the KA pattern set with directions indicated on each edge on each KA pattern.	0
+This complex expression can also be obtained using our KAPattern package.	The directions are chosen so that for state i the arrows are directed toward state i with no diverging edges.	0
+This complex expression can also be obtained using our KAPattern package.	The set of all directional diagrams associated with state 1 for the mechanism of Figure 1 is illustrated in Figure 2B.	0
+This complex expression can also be obtained using our KAPattern package.	Since there are 5 states and 12 KA patterns there are 5 Ã— 12 = 60 directional diagrams associated with the mechanism of Figure 1.	0
+This complex expression can also be obtained using our KAPattern package.	Each directional diagram is associated with a product of pseudo-first order rate constants for the arrows in the directional diagram.	0
+This complex expression can also be obtained using our KAPattern package.	For example the term for the top-left directional diagram in Figure 2B is .	0
+This complex expression can also be obtained using our KAPattern package.	The relative steady-state concentration of each state is proportional to the summation of 12 terms associated with the 12 directional diagrams for each state.	0
+This complex expression can also be obtained using our KAPattern package.	Specifically the relative concentration of the ith enzyme state can be computed as a fraction of the total enzyme concentration whose numerator is the sum of the 12 terms associated with the 12 directional diagrams which all point or end to ith state (for example as shown in Figure 2B 12 directional diagrams point or end to state 1) and denominator is the sum of all 60 terms associated with the directional diagrams for all 5 states in the system (5 Ã— 12).	0
+This complex expression can also be obtained using our KAPattern package.	That can be written as:	0
+This complex expression can also be obtained using our KAPattern package.	Here ?i represents the sum of the 12 terms associated with the state i and ? is the sum over all 5 sets of 12 terms for all states and Eo is the total enzyme concentration.	0
+This complex expression can also be obtained using our KAPattern package.	The KA method is described in somewhat more detail in  and .	0
+This complex expression can also be obtained using our KAPattern package.	Algorithm	0
+This complex expression can also be obtained using our KAPattern package.	As described above the graphical method of King and Altman is based on determining a set of KA patterns that are subsets of the graph of the enzyme mechanism.	0
+This complex expression can also be obtained using our KAPattern package.	Each KA pattern contains the maximal number of edges possible while not containing any closed loops.	0
+This complex expression can also be obtained using our KAPattern package.	Each enzyme state (each vertex in the graph) has associated with it a directional diagram for each KA pattern.	0
+This complex expression can also be obtained using our KAPattern package.	Enumerating all directional diagrams becomes more difficult as the enzyme mechanism becomes more complex.	0
+This complex expression can also be obtained using our KAPattern package.	Previous applications of the theory of graphs to the solution of enzyme kinetic problems have been aimed at developing algorithms that are easy to program and allow users to rapidly calculate the steady-state concentrations of enzyme states and thereby obtain expressions for the rate of product accumulation .	0
+This complex expression can also be obtained using our KAPattern package.	Unlike using symbolic algebra packages to solve a set of nonlinear algebraic equations based on steady-state and mass conservation these approaches take advantage of the similarity between complex enzyme mechanisms and electrical networks.	0
+This complex expression can also be obtained using our KAPattern package.	Specifically it has been proved that the method used to generate trees from linear graphs can be applied to complex enzymatic reaction mechanisms .	0
+This complex expression can also be obtained using our KAPattern package.	Here we use the method described by Lam and Priest  to automatically generate the valid KA patterns from the reaction graph.	0
+This complex expression can also be obtained using our KAPattern package.	This method makes use of the theory called Wang Algebra  where the key principle is that the addition or multiplication operation on two or more identical elements leads to zero (none).	0
+This complex expression can also be obtained using our KAPattern package.	This property can be expressed as	0
+This complex expression can also be obtained using our KAPattern package.	where c is a element which has been operated.	0
+This complex expression can also be obtained using our KAPattern package.	We will see below how this property can be applied as an algebraic representation of a requirement for valid KA patterns.	0
+This complex expression can also be obtained using our KAPattern package.	To apply the Lam-Priest algorithm we first simplify and re-plot the enzymatic system as shown in Figure 3.	0
+This complex expression can also be obtained using our KAPattern package.	In this linear graph representation a node (vertex) represents the enzyme form and a link (edge) represents the inter-conversion relationship between two enzyme forms.	0
+This complex expression can also be obtained using our KAPattern package.	That means if there is inter-conversion between two enzyme forms whether reversible or irreversible then there is a link to connect them.	0
+This complex expression can also be obtained using our KAPattern package.	The links are nondirectional.	0
+This complex expression can also be obtained using our KAPattern package.	A number is assigned to each node (vertex) and each link (edge).	0
+This complex expression can also be obtained using our KAPattern package.	The linear graph structure is represented by an n Ã— n symmetrical matrix (called the link matrix ? in our program).	0
+This complex expression can also be obtained using our KAPattern package.	For the example of Figure 3 ? can be written as:	0
+This complex expression can also be obtained using our KAPattern package.	Each element ?ij is the index of the link between node (enzyme state) i and j.	0
+This complex expression can also be obtained using our KAPattern package.	Further information on the kinetic mechanism of the reaction system is stored in an n Ã— n matrix (called kinetic matrix  in our program).	0
+This complex expression can also be obtained using our KAPattern package.	For the current example  is given by:	0
+This complex expression can also be obtained using our KAPattern package.	Note that  is not symmetric in general.	0
+This complex expression can also be obtained using our KAPattern package.	Application of the Lamb-Priest algorithm starts with randomly selecting n - 1 nodes from the linear graph and determining the links connected to the n -1 nodes.	0
+This complex expression can also be obtained using our KAPattern package.	(It makes no difference which node is excluded; the same final results are obtained for any arbitrary choices.) It is easy to carry out this operation on ? by deleting a row (column) and then listing separately all the nonzero entries from the remaining n - 1 rows (columns).	0
+This complex expression can also be obtained using our KAPattern package.	In the next step using the Wang Algebra described above the links listing obtained in previous step are alphanumerically multiplied.	0
+This complex expression can also be obtained using our KAPattern package.	Here the alphanumeric multiplication of elements (integers or other symbols) is defined as a list rather than numerical values.	0
+This complex expression can also be obtained using our KAPattern package.	For example multiplying alphanumerically 1 and 2 is equal 12 rather than 2.	0
+This complex expression can also be obtained using our KAPattern package.	The result of this operation is the set of all valid KA patterns expressed by a set of link index array.	0
+This complex expression can also be obtained using our KAPattern package.	The Wang Algebra principle guarantees that no invalid or redundant patterns are generated through these steps.	0
+This complex expression can also be obtained using our KAPattern package.	In the final step the links (edges) in each KA pattern are assigned directions so that the reaction steps individually or in sequence lead to a given enzyme state Ei.	0
+This complex expression can also be obtained using our KAPattern package.	For example if we delete the second row corresponding to the enzyme form 2 (surround by dashed circle in Figure 3) we obtain E1 (1 2 3); E3 (2 5); E4 (4 5 6); E5 (3 6).	0
+This complex expression can also be obtained using our KAPattern package.	In the next step we alphanumerically multiply these four lists:	0
+This complex expression can also be obtained using our KAPattern package.	Thus an alphanumerical multiplication of two lists such as (1 2 3) and (2 5) yields a list of all of the entry-by-entry products (1Â–2 1Â–5 2Â–5 2Â–3 3Â–5) (Recall that the product of identical elements such as 2-2 is discarded. The product is discarded if it shows up more than once.).	0
+This complex expression can also be obtained using our KAPattern package.	The result lists all the valid KA patterns represented by 12 lists of link indexes.	0
+This complex expression can also be obtained using our KAPattern package.	The graph representation of all the valid KA patterns is shown in Figure 2A.	0
+This complex expression can also be obtained using our KAPattern package.	The algorithm ensures that only one link shows up in one single pattern only once (Equation (2) and Equation (3)) and that there are no redundant patterns.	0
+This complex expression can also be obtained using our KAPattern package.	As an internal check we apply an independent method to calculate the expected number of valid KA patterns.	0
+This complex expression can also be obtained using our KAPattern package.	Several such methods are available including one introduced by Chou and Forsen  based on the Wong-Hanes rule .	0
+This complex expression can also be obtained using our KAPattern package.	A simpler method is to calculate the determinant of the product of the cut matrix  and its transpose yielding the correct number of valid KA patterns for any enzyme mechanism .	0
+This complex expression can also be obtained using our KAPattern package.	The cut matrix is defined by using the n - 1 nodes of n enzyme complexes as the row numbers and the link indexes as the column numbers.	0
+This complex expression can also be obtained using our KAPattern package.	Thus	0
+This complex expression can also be obtained using our KAPattern package.	where	0
+This complex expression can also be obtained using our KAPattern package.	Here n = total number of enzyme forms and m = total number of links.	0
+This complex expression can also be obtained using our KAPattern package.	Each entry is defined cij = 1 if link j enters state i cij = -1 if link j leaves enzyme i and = 0 otherwise.	0
+This complex expression can also be obtained using our KAPattern package.	Thus there is a different definition of the cut matrix  for each set of definitions of link directions.	0
+This complex expression can also be obtained using our KAPattern package.	For the purpose of computing the number of valid KA patterns the assignment of directions of these links is arbitrary.	0
+This complex expression can also be obtained using our KAPattern package.	For example if we exclude node 2 (dashed circled in Figure 3) and assign directions for each link as shown in Figure 3 the cut matrix will be:	0
+This complex expression can also be obtained using our KAPattern package.	and	0
+This complex expression can also be obtained using our KAPattern package.	Implementation	0
+This complex expression can also be obtained using our KAPattern package.	We use the enzyme-catalyzed reaction mechanism of fumarase to illustrate the usage of the KAPattern program.	0
+This complex expression can also be obtained using our KAPattern package.	Given a simple input file for this complex enzymatic reaction this program produces the link matrix ? and kinetic matrix  as well as generates all the valid KA patterns outputs each pathway corresponding to each enzyme form based on the generated valid patterns and outputs the results (i.e. the generated rate equations) as a MathML file or a MATLAB .m file which can be used in a simulation program of an integrated metabolic system model.	0
+This complex expression can also be obtained using our KAPattern package.	In this program the input file for an enzyme-catalyzed reaction mechanism is a simple .txt file that lists every pseudo-first-order rate constants in the enzyme catalytic system.	0
+This complex expression can also be obtained using our KAPattern package.	Below is the input file for the fumarase reaction mechanism; the first column and the second column are the indexes of the enzyme forms the third column is the pseudo-first-order rate constants connecting the corresponding two enzyme forms (transferring from the first to the second):	0
+This complex expression can also be obtained using our KAPattern package.	input.txt1 3 k1*A3 1 k_11 2 k_6*P2 1 k61 5 k3*B5 1 k_32 4 k_54 2 k5*C3 4 k2*B4 3 k_24 5 k_45 4 k4*ATo clarify the first line of the input.txt file is 1 3 k1*A which means the rate constant for the enzyme conversion from form 1 (E1) to 3 (E3) is k1*A.	0
+This complex expression can also be obtained using our KAPattern package.	The functions ReadInput and GetLink in our KAPattern program read the input file and generate the matrices ?	0
+This complex expression can also be obtained using our KAPattern package.	(Equation (4)) and  (Equation (5)).	0
+This complex expression can also be obtained using our KAPattern package.	The function Wang is used to generate the valid KA patterns.	0
+This complex expression can also be obtained using our KAPattern package.	(For detailed description of functions and the full example see the additional file : Appendix.)	0
+This complex expression can also be obtained using our KAPattern package.	With all the valid KA patterns generated it is straightforward to enumerate all of the directional diagrams using the information from the  and ? matrices.	0
+This complex expression can also be obtained using our KAPattern package.	For the enzyme form Ei the program checks each non-zero entry of the ith column in the ? matrix against all links in the link list of one pattern and finds every link that points to the enzyme form Ei.	0
+This complex expression can also be obtained using our KAPattern package.	Based on the next end point the process is repeated until no links is left out in the list.	0
+This complex expression can also be obtained using our KAPattern package.	Finally multiplying all the pseudo-first-order rate constants we can get the expression corresponding to one pattern.	0
+This complex expression can also be obtained using our KAPattern package.	Repeating this procedure for each KA pattern and for each enzyme form we obtain the concentration of each enzyme form Ei relative to the total concentration of enzyme Eo.	0
+This complex expression can also be obtained using our KAPattern package.	The cost of the rate equation generation depends not only on the size of the problem but also on the complexity of the problem.	0
+This complex expression can also be obtained using our KAPattern package.	For most small-sized enzyme systems we tested the program gives results less than 1 second.	0
+This complex expression can also be obtained using our KAPattern package.	For the moderate-size problem example we present in the additional file (See the additional file : Appendix.) the program generates 288 valid KA patterns in about 4.5 seconds (on Intel Pentium IV 2.0 GHz 2 GB RAM).	0
+This complex expression can also be obtained using our KAPattern package.	Below is the MATLAB output file generated from the function BuildFile of the KAPattern program for the fumarase reaction mechanism.	0
+This complex expression can also be obtained using our KAPattern package.	The output has one or two input parameters depending on whether there are pseudo-first-order rate constants and three output variables.	0
+This complex expression can also be obtained using our KAPattern package.	If there are pseudo-first-order rate constants which include substrates or products concentrations the two parameters will be two arrays K and Con corresponding to reaction rate constants and substrate and product concentrations respectively.	0
+This complex expression can also be obtained using our KAPattern package.	The three output variables are N F and D where N and F are vectors listing the numerators ?i and the fractions ?i/? for Equation (1).	0
+This complex expression can also be obtained using our KAPattern package.	The output variable D is the denominator D.	0
+This complex expression can also be obtained using our KAPattern package.	Another useful feature of our KAPattern program is that it can deal with the irreversible reaction steps.	0
+This complex expression can also be obtained using our KAPattern package.	This feature is accessed through the input file.	0
+This complex expression can also be obtained using our KAPattern package.	For example assume that we can neglect the reaction from state 1 to state 2 and from state 2 to state 4.	0
+This complex expression can also be obtained using our KAPattern package.	In this case the input file is simply modified by deleting the lines '1 2 k_6*P' and '2 4 k_5'.	0
+This complex expression can also be obtained using our KAPattern package.	The generated link matrix ? will be the same as above.	0
+This complex expression can also be obtained using our KAPattern package.	But the kinetic matrix  matrix will be modified:	0
+This complex expression can also be obtained using our KAPattern package.	Correspondingly the numerator part in the output file will be changed to	0
+This complex expression can also be obtained using our KAPattern package.	The executable program is available in Windows Mac or Linux formats that do not require MATLAB installed on the end-user's computer.	0
+This complex expression can also be obtained using our KAPattern package.	Furthermore end-users do not need any particular computer programming knowledge to use the package.	0
+This complex expression can also be obtained using our KAPattern package.	The GUI has different windows that can display various components of the program such as input file link matrix ? kinetic matrix  generated KA pattern list and MATLAB .m output file.	0
+This complex expression can also be obtained using our KAPattern package.	There is also a separate window called Pattern Viewer which provides users the flexibility to visualize any selected KA pattern like that shown in Figure 2A.	0
+This complex expression can also be obtained using our KAPattern package.	Users can drag and drop nodes and links of one pattern to where they want to deploy them.	0
+This complex expression can also be obtained using our KAPattern package.	As an example a screen-shot of the fumarase enzyme-catalysed reaction system is shown in Figure 4.	0
+This complex expression can also be obtained using our KAPattern package.	Users can provide their own input.txt file defining any specific enzyme catalyzed reaction and run the program in the GUI to view all the valid KA patterns and generate the corresponding rate equation.	0
+This complex expression can also be obtained using our KAPattern package.	In addition the program can generate MathML and MATLAB .m output file in the end-user's working directory.	0
+This complex expression can also be obtained using our KAPattern package.	(See the additional file : Appendix.)	0
+This complex expression can also be obtained using our KAPattern package.	Conclusion	0
+This complex expression can also be obtained using our KAPattern package.	This program generates complete set of valid King-Altman patterns for complex enzyme-catalyzed reaction mechanisms.	0
+This complex expression can also be obtained using our KAPattern package.	Unlike other computer-assisted methods that use symbolic algebra packages to solve the system of nonlinear algebraic equations arising from steady-state mass conservation our program is developed from the original schematic method of King-Altman  and employs the topological theory of linear graphs .	0
+This complex expression can also be obtained using our KAPattern package.	Our program can derive rate equations for both strictly steady-state conditions and those with rapid equilibrium steps.	0
+This complex expression can also be obtained using our KAPattern package.	The enzyme mechanism can be either branched or unbranched enzyme mechanisms containing both reversible and irreversible reactions steps.	0
+This complex expression can also be obtained using our KAPattern package.	Using a simple easy-to-understand input file our program can produce a MATLAB .m file or MathML file that can be integrated into other biochemical system model programs.	0
+This complex expression can also be obtained using our KAPattern package.	It can illustrate the visualization of all the valid KA patterns as well.	0
+This complex expression can also be obtained using our KAPattern package.	In addition the generated link matrix ? and kinetic matrix  which characterize the enzyme mechanisms here may be useful for other applications (e.g. to characterize the topological properties and stoichiometric matrix of large-scale networks).	0
+This complex expression can also be obtained using our KAPattern package.	It should be emphasized that in the current version our program is restricted to systems whose element reactions are association or dissociation of substrates or first-order inter-conversion of enzyme species.	0
+This complex expression can also be obtained using our KAPattern package.	Systems involving allosteric activation and inhibition or other protein-protein interactions should be handled carefully because our approach still lacks direct connections between the rate constants and the kinetic constants such as Michaelis-Menten constants.	0
+This complex expression can also be obtained using our KAPattern package.	Those connections are important for analyzing enzyme kinetic experimental data.	0
+This complex expression can also be obtained using our KAPattern package.	Availability and requirements	0
+This complex expression can also be obtained using our KAPattern package.	The KAPattern is written in MATLAB and distributed as a standalone GUI-based application for Windows Mac or Linux/Unix.	0
+This complex expression can also be obtained using our KAPattern package.	The MATLAB source codes and the KAPattern stand-alone program are freely available and can be accessed at http://www.biocoda.org.	0
+This complex expression can also be obtained using our KAPattern package.	Authors' contributions	0
+This complex expression can also be obtained using our KAPattern package.	Basic idea was conceived by FQ.	0
+This complex expression can also be obtained using our KAPattern package.	Software was developed and implemented by FQ and YH with RKD and DAB advising.	0
+This complex expression can also be obtained using our KAPattern package.	The manuscript was written by FQ and revised by RKD and DAB.	0
+This complex expression can also be obtained using our KAPattern package.	Manuscript was read and approved by all authors.	0
